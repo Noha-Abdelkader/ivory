@@ -1,0 +1,172 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import "tailwindcss";
+
+/* globa; colors */
+:root {
+  --ft-color: #ae0641;
+  --main-color: #620c22d4;
+  --faint-color: #fce8ed;
+  --sec-color:#e8305f;
+  --rd-color:#cf1746;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: end;
+}
+
+/* style */
+body {
+  margin: 0;
+  font-family: "Cairo", serif, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* btns */
+.btn {
+  background-color: var(--main-color);
+  color: var(--faint-color);
+  @apply rounded-md text-nowrap w-full py-2 duration-300 ease-in cursor-pointer border-[1px] border-transparent;
+
+}
+
+.btn:hover {
+  background-color: var(--faint-color);
+  color: var(--main-color);
+  border-color: var(--main-color);
+
+}
+
+.btn-faint {
+  background-color: var(--faint-color);
+  color: var(--main-color);
+  @apply rounded-md text-nowrap w-full py-2 duration-300 ease-in cursor-pointer border-[1px] border-transparent;
+
+}
+
+.btn-faint:hover {
+  background-color: var(--main-color);
+  color: var(--faint-color);
+  border-color: var(--faint-color);
+
+}
+
+/* section  wrapper */
+.wrapper {
+  @apply w-[90%] lg:w-[70%] mx-auto p-3 sm:p-10 ;
+}
+.section{
+  @apply p-3 sm:p-10;
+}
+
+.before_line {
+  position: relative;
+@media screen and (max-width:1500px) {
+    display: none;
+
+  }
+}
+
+.before_line::before {
+/* content: '⬤'; */
+content: '';
+  position: absolute;
+  left: -30px;
+  width: 0.5px;
+  height: 110%;
+  background-color:var(--main-color) ;
+      color: var(--main-color);
+
+ 
+}
+.before_line::after {
+content: '⬤';
+  position: absolute;
+  left: -36px;
+  width: 0.5px;
+  height: 10%;
+  top:-10px;
+  background-color:transparent;
+      color: var(--main-color);
+
+ 
+}
+
+.line_through{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+      color: var(--main-color);
+      font-size: 18px;
+      position: relative;
+      @media screen and (max-width:1095px) {
+          display: none;
+      
+        }
+}
+.line_through>span{
+  @apply border-2 border-[var(--main-color)] rounded-full w-[40px] aspect-square flex items-center justify-center absolute top-0 ;
+}
+.line_through::after{
+content: "";
+position: absolute;
+  left: 50%;
+  width: 1px;
+    height: 92%;
+      top: 40px;
+  background-color: var(--main-color);
+
+}
+
+/* position */
+.right{
+  display: flex;
+  justify-content: end;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.center_icon{
+  @apply flex items-start text-end justify-end ;
+}
+/* header */
+.header h2{
+  @apply text-[var(--main-color)] font-semibold text-lg mb-3;
+}
+.header p{
+ @apply text-[var(--main-color)] font-semibold  text-xs;
+}
+
+
+.head{
+  @apply text-center text-[var(--faint-color)] text-sm sm:text-3xl lg:text-5xl font-bold mb-4 ;
+}
+.para{
+  @apply text-[8px] sm:text-xs lg:text-sm text-end text-[var(--faint-color)] mb-4 font-bold ;
+}
+
+/* overlay */
+.parent_overLay:hover .over_lay{
+  bottom: 0;
+}
+
+/* btn overlay */
+.btn_hover:hover{
+  background-color: var(--main-color);
+  color: var(--faint-color);
+}
+.btn_hover {
+  background-color: var(--faint-color);
+    color: var(--main-color);
+    @apply rounded-md text-nowrap w-full  duration-300 ease-in-out cursor-pointer border-[1px] border-[var(--main-color)] py-1 md:py-2.5 lg:py-3.5 relative overflow-hidden ;
+}
+.btn_hover>div{
+  @apply w-20 h-80 bg-[var(--faint-color)] rotate-45 absolute top-[-190px] left-[-190px] duration-300 ease-in-out;
+}
+.btn_hover:hover >div{
+left:290px;
+}
